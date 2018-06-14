@@ -4,6 +4,7 @@ import cv2
 
 class Application:
     def __init__(self, master=None):
+        
         self.fontePadrao = ("Arial", "10")
         self.primeiroContainer = Frame(master)
         self.primeiroContainer["pady"] = 10
@@ -82,6 +83,8 @@ class Application:
         	k = cv2.waitKey(30) & 0xff
         	if k == 27:
         		break
+        captura.release
+        cv2.destroyAllWindows()
 
     def CameraOtsu(self):
         captura = cv2.VideoCapture(0) 
@@ -96,6 +99,8 @@ class Application:
             k = cv2.waitKey(30) & 0xff
             if k == 27:
             	break
+        captura.release
+        cv2.destroyAllWindows()
 
     def CameraGray(self):
         captura = cv2.VideoCapture(0) 
@@ -109,6 +114,8 @@ class Application:
         	k = cv2.waitKey(30) & 0xff
         	if k == 27:
         		break
+        captura.release
+        cv2.destroyAllWindows()
 
 root = Tk()
 Application(root)
